@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
+# In[23]:
 
 
 import pandas as pd
@@ -14,9 +14,10 @@ warnings.filterwarnings("ignore")  # Oculta todos los warnings
 
 # Mis modulos
 import get_data as gd
+import print_management as pm
 
 
-# In[11]:
+# In[ ]:
 
 
 # import pyfiglet
@@ -29,7 +30,7 @@ banner = r"""
  / ___ \ |_| | || (_) \ V /  __/ | | | || (_| | | |__| |_| |  _ <|  __/ 
 /_/   \_\__,_|\__\___/ \_/ \___|_| |_|\__\__,_|  \____\___/|_| \_\_|                                                                          
 
-          💥 AUTOMATIZADOR DE FORMATO AUTOVENTA CORPORATIVO 💥
+         💥 AUTOMATIZADOR DE FORMATO AUTOVENTA CORPORATIVO 💥
 """
 
 print(banner, end='\n\n')
@@ -53,13 +54,14 @@ tablas_por_locacion = {} # Guardar los DataFrames por Locacion
 LOCACIONES = ['06 AYA EL PEDREGAL', '40 AYA CHALA', '88 AYA CAMANA']
 
 
-# In[15]:
+# In[ ]:
 
 
 importlib.reload(gd)
+importlib.reload(pm)
 
 df_corp = gd.main(FILE_PROPERTIES, LOCACIONES)
-print(df_corp.info())
+pm.show_df(df_corp)
 
 
 # In[16]:
