@@ -7,7 +7,6 @@ def show_df(df):
     console = Console()
 
     table = Table(show_header=True, header_style="bold white on dark_red", box=box.SQUARE)
-    table.title = "📊 Resumen de DataFrame"
     table.add_column("🧱 Columna", style="bold cyan", no_wrap=True)
     table.add_column("📂 Tipo", style="bold magenta")
     table.add_column("✅ Non-Null", justify="right", style="green")
@@ -27,5 +26,5 @@ def show_df(df):
         f"[bold green]💾 Memoria usada:[/bold green] {mem_kb:.2f} KB"
     )
 
-    console.print(Panel.fit(table, title="📋 Estructura"))
+    console.print(Panel.fit(table, title="📊 Resumen de DataFrame"))
     console.print(Panel.fit(resumen, title="📎 Resumen", border_style="grey50"))
